@@ -1,0 +1,7 @@
+df['Order Month'] = df['Order Date'].dt.to_period('M')
+monthly_sales = df.groupby('Order Month')['Sales'].sum()
+monthly_sales.plot(figsize=(14, 5), title='Monthly Sales Trend')
+plt.ylabel('Sales')
+plt.xlabel('Month')
+plt.xticks(rotation=45)
+plt.show()
